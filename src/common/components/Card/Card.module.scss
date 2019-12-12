@@ -1,0 +1,35 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  margin-top: 100px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  max-height: 350px;
+  margin-bottom: 20px;
+
+  border: 1px solid black;
+  background-color: #1cbfe2;
+  color: white;
+  text-align: center;
+}
+
+.content {
+  text-transform: uppercase;
+  visibility: hidden;
+
+  &.card--is-flipped {
+    visibility: visible;
+  }
+}
