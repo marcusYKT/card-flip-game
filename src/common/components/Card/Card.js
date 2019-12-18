@@ -1,17 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import classNames from 'classnames'
 import styles from './Card.module.scss'
 
-export const Card = ({ title }) => {
-  const [isCardFliped, setIsCardFliped] = useState(false)
-
-  const toggleCard = () => {
-    setIsCardFliped(!isCardFliped)
-  }
+export const Card = ({ title, onClick, isFlipped, buttonClick, index }) => {
 
   const cardClassName = classNames(styles.content, {
-    [styles['card--is-flipped']]: isCardFliped
+    [styles['card--is-flipped']]: isFlipped
   })
 
   return (
@@ -19,14 +14,12 @@ export const Card = ({ title }) => {
       <div className={classNames([styles['card']])}>
         <Row>
           <Col>
-            <button onClick={toggleCard}>Click me</button>
-          </Col>
-        </Row>
-        <Row>  
-          <Col>
-            <p className={cardClassName}>
-              { title }
-            </p>
+            <button onClick={() => buttonClick(index)}>
+              Click me
+              <p className={cardClassName}>
+                { title }
+              </p>
+            </button>
           </Col>
         </Row>
       </div>
