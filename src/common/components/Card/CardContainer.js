@@ -4,9 +4,7 @@ import { Container, Row } from 'react-bootstrap'
 import { Card } from './Card'
 import { data } from './data'
 
-console.log(data)
-
-export const CardContainer = ({ children }) => {
+export const CardContainer = () => {
   const [clickedCards, setClickedCards] = useState([])
   const [matchedCards, addMatchedPair] = useState([])
   const [isMatch, setMatch] = useState(false)
@@ -39,7 +37,6 @@ export const CardContainer = ({ children }) => {
         {
           data.map((title, index) =>
             <Card
-              // onClick={() => bologna(index)}
               buttonClick={handleCardClick}
               index={index}
               isFlipped={clickedCards.includes(index) || matchedCards.includes(index)}

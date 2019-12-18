@@ -15,7 +15,6 @@ export const Card = ({ title, onClick, isFlipped, buttonClick, index }) => {
         <Row>
           <Col>
             <button onClick={() => buttonClick(index)}>
-              Click me
               <p className={cardClassName}>
                 { title }
               </p>
