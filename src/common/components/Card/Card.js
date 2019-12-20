@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap'
 import classNames from 'classnames'
 import styles from './Card.module.scss'
 
-export const Card = ({ title, onClick, isFlipped, buttonClick, index }) => {
+export const Card = ({ title, onClick, isFlipped }) => {
 
   const cardClassName = classNames(styles.content, {
     [styles['card--is-flipped']]: isFlipped
@@ -14,7 +14,7 @@ export const Card = ({ title, onClick, isFlipped, buttonClick, index }) => {
       <div className={classNames([styles['card']])}>
         <Row>
           <Col>
-            <button onClick={() => buttonClick(index)}>
+            <button onClick={onClick}>
               <p className={cardClassName}>
                 { title }
               </p>

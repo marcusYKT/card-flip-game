@@ -29,6 +29,9 @@ button {
   color: white;
   text-align: center;
   
+  &:focus {
+    outline: 5px auto #ed6146;
+  }
 }
 
 .content {
